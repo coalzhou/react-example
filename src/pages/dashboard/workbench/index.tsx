@@ -25,7 +25,7 @@ const selectChange = (e) =>{
 }
 
 
-const clickRow = (record) =>{
+const clickRow = (record: User) =>{
 	console.log('h world: ' + JSON.stringify(record))
 }
 let i = 100
