@@ -13,11 +13,12 @@ import {Paper, Divider,FormControl,InputLabel,Input,FormHelperText,Button,Select
 	Table,TableHead,TableRow,TableCell,TableBody
 } from "@mui/material";
 import {useState} from 'react'
-
+import { faker } from "@faker-js/faker";
 interface User{
 	name: string,
 	age: number,
-	sex: string
+	sex: string,
+	fakeId: string,
 }
 
 const selectChange = (e: { target: { value: any; }; }) =>{
@@ -28,17 +29,17 @@ const selectChange = (e: { target: { value: any; }; }) =>{
 const clickRow = (record: User) =>{
 	console.log('h world: ' + JSON.stringify(record))
 }
-let i = 100
+
 function Workbench() {
 	const [rows, setRows] = useState<User[]>([
-		{name: 'row1', age: 18, sex: 'male'},
-		{name: 'row2', age: 19, sex: 'male'},
-		{name: 'row3', age: 18, sex: 'female'},
-		{name: 'row4', age: 21, sex: 'female'}
+		{name: 'row1', age: 18, sex: 'male',fakeId:'1'},
+		{name: 'row2', age: 19, sex: 'male',fakeId:'2'},
+		{name: 'row3', age: 18, sex: 'female',fakeId:'3'},
+		{name: 'row4', age: 21, sex: 'female',fakeId:'4'}
 	])
 
 	const handleClick = () => {
-		setRows([...rows, {name: 'row' + i++, age: 18, sex: 'male'}])
+		setRows([...rows, {name: 'row99' , age: 18, sex: 'male',fakeId: faker.string.uuid()}])
 	}
 
 	return (
@@ -91,7 +92,7 @@ function Workbench() {
 					<TableBody>
 						{rows.map((row) => (
 							<TableRow
-								key={row.name}
+								key={row.fakeId}
 								sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 							>
 								<TableCell component="th" scope="row" align="center">
