@@ -12,24 +12,35 @@ import TotalCard from "./total-card";*/
 import {Paper, Divider,FormControl,InputLabel,Input,FormHelperText,Button,Select,MenuItem,TableContainer,
 	Table,TableHead,TableRow,TableCell,TableBody
 } from "@mui/material";
+import {useState} from 'react'
 
-const handleClick = () => {
-	console.log('hello')
+interface User{
+	name: string,
+	age: number,
+	sex: string
 }
+
 const selectChange = (e) =>{
 	console.log(e.target.value)
 }
-const rows = [
-	{name: 'row1', age: 18, sex: 'male'},
-	{name: 'row2', age: 19, sex: 'male'},
-	{name: 'row3', age: 18, sex: 'female'},
-	{name: 'row4', age: 21, sex: 'female'},
-]
+
+
 const clickRow = (record) =>{
-	debugger
 	console.log('h world: ' + JSON.stringify(record))
 }
+let i = 100
 function Workbench() {
+	const [rows, setRows] = useState<User[]>([
+		{name: 'row1', age: 18, sex: 'male'},
+		{name: 'row2', age: 19, sex: 'male'},
+		{name: 'row3', age: 18, sex: 'female'},
+		{name: 'row4', age: 21, sex: 'female'}
+	])
+
+	const handleClick = () => {
+		setRows([...rows, {name: 'row' + i++, age: 18, sex: 'male'}])
+	}
+
 	return (
 		<div className="p-2">
 			<Paper elevation={3}>
