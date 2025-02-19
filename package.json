@@ -79,12 +79,15 @@
 		"zustand": "^4.4.3"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.26.9",
+		"@babel/preset-env": "^7.26.9",
 		"@biomejs/biome": "1.9.4",
 		"@commitlint/cli": "^17.7.2",
 		"@commitlint/config-conventional": "^17.7.0",
 		"@faker-js/faker": "^8.1.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.2.0",
+		"@types/jest": "^29.5.14",
 		"@types/autosuggest-highlight": "^3.2.0",
 		"@types/color": "^3.0.4",
 		"@types/nprogress": "^0.2.1",
@@ -107,7 +110,9 @@
 		"typescript": "^5.2.2",
 		"vite": "^5.4.9",
 		"vite-plugin-svg-icons": "^2.0.1",
-		"vite-tsconfig-paths": "^5.0.1"
+		"vite-tsconfig-paths": "^5.0.1",
+		"ts-jest": "^29.2.5",
+		"babel-jest": "^29.7.0"
 	},
 	"engines": {
 		"node": "22.*"

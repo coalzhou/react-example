@@ -9,8 +9,7 @@ import ReactDOM from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 // svg icons
 import "virtual:svg-icons-register";
-// mock api
-import worker from "./_mock";
+
 // i18n
 import "./locales/i18n";
 // css
@@ -47,4 +46,4 @@ root.render(
 );
 
 // 🥵 start service worker mock in development mode
-worker.start({ onUnhandledRequest: "bypass" });
+//worker.start({ onUnhandledRequest: "bypass" });
